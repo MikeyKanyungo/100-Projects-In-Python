@@ -6,4 +6,3 @@ for i in lst:
         print ("buzz")
     else:
         print (i)
-print(lst)
