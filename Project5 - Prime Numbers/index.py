@@ -12,7 +12,7 @@ def primeChecker (num):
     return True
 
 
-
+# this function checks for prime numbers between a given range
 def primeLister(start, end):
     #we pass the function an empty array which will be filled by prime number from the program
     primes = []

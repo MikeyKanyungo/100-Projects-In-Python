@@ -21,40 +21,19 @@ adults = int(input("How many adults are in your group?"))
 children = int(input("How many children did you bring altogether?"))
 below = int (input("How many children are 2 years or below?"))
 
-#Function to calculate children that'll be required to pay
-def paying_children():
-    children - below
+# Calculate the number of paying children
+paying_children = children - below
 
-    return paying_children
+# Calculate the number of adults entering for free (1 free adult for every 10 paying children)
+free_adults = paying_children // 10
 
-#Function to calculate adults entering for free
-def free_adults():
-    paying_children / 10
+# Calculate the earned discount for every 50 paying children (5% discount)
+discount_amount = (paying_children // 50) * (entry_children * 0.05)
 
-    return free_adults
+# Calculate the total bill for adults and children
+bill_adults = (adults - free_adults) * entry_adults
+bill_children = paying_children * entry_children
 
-#Function to calculate earned discount for every 50 children
-def discount():
-    (paying_children / 50) * 0.05 #0.05 already calculated from 50/100 to simply the calculations
-
-    return discount
-print ("You've received", discount, "total")
-
-def bill_adults():
-    (adults - free_adults) * 80
-
-    return bill_adults
-print("Adults will pay K", bill_adults)
-
-def bill_children():
-    paying_children*50
-
-    return bill_children
-print("Children will pay", bill_children)
-
-#Function to calculate the total bill to be paid
-def total_bill():
-    bill_adults+bill_children-discount
-    return total_bill
-
+# Calculate the total bill to be paid
+total_bill = bill_adults + bill_children - discount_amount
 print ("Your total bill is K", total_bill)
