@@ -6,7 +6,7 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 print (logo) 
 
-def caeser(text, shift, direction):
+def caesar(text, shift, direction):
     newText = ""
 
     if direction == 'decode':
@@ -16,7 +16,7 @@ def caeser(text, shift, direction):
         if char in alphabet:
             position = alphabet.index(char)
             newPosition = position + shift
-            newText += alphabet[newPosition]
+            newText += alphabet[newPosition % 26]
         else:
             newText += char 
 
@@ -27,11 +27,11 @@ letContinue = True
 while letContinue:
     direction = input("type 'encode' to encode message or 'decode' to decode message.\n") 
     text = input ("Type your message here.\n").lower()
-    shiftValue = input("What's your shift value?\n")
+    shiftValue = int(input("What's your shift value?\n"))
     shiftPosition = shiftValue % 26 #used if shift value is too big.
 
 
-    caeser(text=text, shift=shiftValue, direction=direction)
+    caesar(text=text, shift=shiftValue, direction=direction)
 
     result = input ("Type 'yes' to cintinue or 'no' to discontinue.")
     if result == 'no':
