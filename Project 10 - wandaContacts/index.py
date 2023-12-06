@@ -1,7 +1,7 @@
 #we will use this json module for exporting to a json file. 
 import json 
 
-# names and phone numbers will be saved to this phone_book dictionary
+# names and phone numbers will be saved to this phone_book JSON file
 phone_book = {}
 
 # enter the number of phone numbers a user wants to save
